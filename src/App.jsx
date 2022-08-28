@@ -8,18 +8,24 @@ import Shop from "./pages/Shop";
 
 function App() {
   const [navMenuActive, setNavMenuActive] = useState(false);
+  const [cartActive, setCartActive] = useState(false);
 
-  function hamburgerClickHandler() {
+  function navMenuHandler() {
     navMenuActive === false ? setNavMenuActive(true) : setNavMenuActive(false);
+  }
+
+  function cartHandler() {
+    cartActive === false ? setCartActive(true) : setCartActive(false);
   }
 
   return (
     <BrowserRouter>
       <Navbar
-        hamburgerClickHandler={hamburgerClickHandler}
+        cartHandler={cartHandler}
+        navMenuHandler={navMenuHandler}
         navMenuActive={navMenuActive}
       />
-      <ShoppingCart />
+      <ShoppingCart cartActive={cartActive} cartHandler={cartHandler} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Shop" element={<Shop />} />

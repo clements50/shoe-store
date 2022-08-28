@@ -1,13 +1,17 @@
 import styles from "../styles/ShoppingCart.module.css";
+import { useState } from "react";
 
-export default function ShoppingCart() {
+export default function ShoppingCart(props) {
+  const { cartActive, cartHandler } = props;
+
   return (
-    <div className={styles.shopping_cart}>
-      <h3>Your Cart</h3>
+    <div className={`${styles.shopping_cart} ${cartActive && styles.active}`}>
+      <h2>Your Cart</h2>
       <div>Cart Empty</div>
+      <div>Total $20</div>
       <div className={styles.buttons_container}>
         <button>Check Out</button>
-        <button>Close</button>
+        <button onClick={cartHandler}>Close</button>
       </div>
     </div>
   );

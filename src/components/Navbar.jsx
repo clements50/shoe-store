@@ -5,7 +5,7 @@ import Hamburger from "../components/Hamburger";
 import styles from "../styles/Navbar.module.css";
 
 export default function Navbar(props) {
-  const { hamburgerClickHandler, navMenuActive } = props;
+  const { navMenuHandler, navMenuActive, cartHandler } = props;
 
   return (
     <div className={styles.navbar}>
@@ -13,16 +13,25 @@ export default function Navbar(props) {
         <h3>Shoes Clues</h3>
         <ul className={` ${styles.nav_menu} ${navMenuActive && styles.active}`}>
           <li>
-            <Link to="/">Home</Link>
+            <Link onClick={navMenuHandler} to="/">
+              Home
+            </Link>
           </li>
           <li>
-            <Link to="/Shop">shop</Link>
+            <Link onClick={navMenuHandler} to="/Shop">
+              shop
+            </Link>
           </li>
         </ul>
         <div className={styles.navbar_flex__container2}>
-          <FontAwesomeIcon className={styles.bag_icon} icon={faBagShopping} />
+          <div>5</div>
+          <FontAwesomeIcon
+            className={styles.bag_icon}
+            icon={faBagShopping}
+            onClick={cartHandler}
+          />
           <Hamburger
-            hamburgerClickHandler={hamburgerClickHandler}
+            navMenuHandler={navMenuHandler}
             navMenuActive={navMenuActive}
           />
         </div>

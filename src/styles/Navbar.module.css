@@ -30,6 +30,21 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  position: relative;
+}
+
+.navbar_flex__container2 div:nth-child(1) {
+  position: absolute;
+  background: orange;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: -5px;
+  left: -10px;
 }
 
 .bag_icon {
