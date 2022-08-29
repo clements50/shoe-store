@@ -1,0 +1,68 @@
+.hero_section {
+  background: url("../assets/white-shoes.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 1.7rem;
+  height: calc(100vh - 60px);
+  position: relative;
+}
+
+.hero_section h1 {
+  font-weight: 400;
+  font-size: 3rem;
+  width: 20rem;
+}
+
+.shop_now__btn {
+  padding: 10px;
+  width: 70%;
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 2.5rem;
+  left: 0;
+  right: 0;
+  border: none;
+  color: white;
+  background: #bf0426;
+  font-size: 25px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 800px) and (max-width: 899px) {
+  .hero_section {
+    padding-top: 1rem;
+  }
+
+  .hero_section h1 {
+    width: 35rem;
+    font-weight: 300;
+    font-size: 5rem;
+  }
+
+  .shop_now__btn {
+    width: 200px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .hero_section {
+    padding-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .hero_section h1 {
+    width: 45rem;
+    font-weight: 300;
+    font-size: 6rem;
+  }
+  .shop_now__btn {
+    width: 200px;
+    margin: 0;
+    position: static;
+    width: 30rem;
+  }
+}
