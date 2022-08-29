@@ -1,0 +1,33 @@
+.item_container {
+  padding: 10px;
+  border: 1px solid black;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  gap: 10px;
+}
+
+.image_container {
+  height: 200px;
+  border-bottom: 1px solid black;
+}
+
+.price_container {
+  text-align: start;
+}
+
+.item_container button {
+  padding: 10px;
+  background: #bf0436;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 700px) {
+  .item_container {
+    width: 100%;
+  }
+}

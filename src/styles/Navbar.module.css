@@ -3,6 +3,8 @@
   height: 60px;
   position: relative;
   background: white;
+  display: flex;
+  align-items: center;
 }
 
 .navbar_flex__container {

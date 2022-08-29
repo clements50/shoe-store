@@ -10,4 +10,5 @@
 #root {
   min-height: 100vh;
   background: #e9eaf2;
+  max-width: 1950px;
 }
