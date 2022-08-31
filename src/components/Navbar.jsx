@@ -1,11 +1,19 @@
+import { useState } from "react";
+import styles from "../styles/Navbar.module.css";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
 import Hamburger from "../components/Hamburger";
-import styles from "../styles/Navbar.module.css";
 
 export default function Navbar(props) {
   const { navMenuHandler, navMenuActive, cartHandler } = props;
+  const [numberOfItemsInCart, setNumberOfItemsInCart] = useState(1);
+
+  let itemsNotification = null;
+
+  if (numberOfItemsInCart > 0) {
+    itemsNotification = <div>{numberOfItemsInCart}</div>;
+  }
 
   return (
     <div className={styles.navbar}>
@@ -24,7 +32,7 @@ export default function Navbar(props) {
           </li>
         </ul>
         <div className={styles.navbar_flex__container2}>
-          <div>5</div>
+          {itemsNotification}
           <FontAwesomeIcon
             className={styles.bag_icon}
             icon={faBagShopping}
