@@ -4,5 +4,12 @@
 }
 
 .shop h1 {
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
+}
+
+.items_section {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }

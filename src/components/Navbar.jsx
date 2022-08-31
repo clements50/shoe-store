@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
 import Hamburger from "../components/Hamburger";
-import { ShoppingCartContext } from "../context/ShoppingCartContext";
+import { CartContext } from "../context/ShoppingCartContext.jsx";
 
 export default function Navbar(props) {
   const { navMenuHandler, navMenuActive } = props;
-  const [numberOfItemsInCart, setNumberOfItemsInCart] = useState(1);
-  const { cartHandler } = useContext(ShoppingCartContext);
+  const [numberOfItemsInCart, setNumberOfItemsInCart] = useState(0);
+  const { cartHandler } = useContext(CartContext);
 
   let itemsNotification = null;
 

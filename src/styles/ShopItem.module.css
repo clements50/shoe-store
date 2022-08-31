@@ -9,8 +9,13 @@
 }
 
 .image_container {
-  height: 200px;
+  height: 300px;
   border-bottom: 1px solid black;
+}
+
+img {
+  height: 100%;
+  width: 100%;
 }
 
 .price_container {

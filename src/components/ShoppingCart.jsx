@@ -1,9 +1,9 @@
+import { useContext } from "react";
 import styles from "../styles/ShoppingCart.module.css";
-import { useState, useContext } from "react";
-import { ShoppingCartContext } from "../context/ShoppingCartContext";
+import { CartContext } from "../context/ShoppingCartContext.jsx";
 
-export default function ShoppingCart(props) {
-  const { cartActive, cartHandler } = useContext(ShoppingCartContext);
+export default function ShoppingCart() {
+  const { cartHandler, cartActive } = useContext(CartContext);
 
   return (
     <div className={`${styles.shopping_cart} ${cartActive && styles.active}`}>

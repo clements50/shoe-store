@@ -1,24 +1,24 @@
-import { createContext, useId, useState } from "react";
-import items from "../data/ShopItems.json";
+import { createContext, useState, useId } from "react";
+import { ShopItems } from "../data/ShopItems";
 
-export const ShoppingCartContext = createContext([]);
+export const CartContext = createContext([]);
 
-export const ShoppingCartProvider = ({ children }) => {
+export const CartProvider = ({ children }) => {
   const [cartActive, setCartActive] = useState(false);
-
-  const shopItems = items.map((item) => {
-    return { ...item, id: useId() };
-  });
 
   const cartHandler = () => {
     cartActive === false ? setCartActive(true) : setCartActive(false);
   };
 
+  const shopItems = ShopItems.map((item) => {
+    return { ...item, id: useId() };
+  });
+
   return (
-    <ShoppingCartContext.Provider
-      value={{ shopItems, cartActive, setCartActive, cartHandler }}
+    <CartContext.Provider
+      value={{ cartActive, setCartActive, cartHandler, shopItems }}
     >
       {children}
-    </ShoppingCartContext.Provider>
+    </CartContext.Provider>
   );
 };
