@@ -1,8 +1,9 @@
 import styles from "../styles/ShoppingCart.module.css";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { ShoppingCartContext } from "../context/ShoppingCartContext";
 
 export default function ShoppingCart(props) {
-  const { cartActive, cartHandler } = props;
+  const { cartActive, cartHandler } = useContext(ShoppingCartContext);
 
   return (
     <div className={`${styles.shopping_cart} ${cartActive && styles.active}`}>

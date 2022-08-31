@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import styles from "../styles/Navbar.module.css";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
 import Hamburger from "../components/Hamburger";
+import { ShoppingCartContext } from "../context/ShoppingCartContext";
 
 export default function Navbar(props) {
-  const { navMenuHandler, navMenuActive, cartHandler } = props;
+  const { navMenuHandler, navMenuActive } = props;
   const [numberOfItemsInCart, setNumberOfItemsInCart] = useState(1);
+  const { cartHandler } = useContext(ShoppingCartContext);
 
   let itemsNotification = null;
 
