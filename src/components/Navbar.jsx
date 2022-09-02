@@ -8,13 +8,12 @@ import { CartContext } from "../context/ShoppingCartContext.jsx";
 
 export default function Navbar(props) {
   const { navMenuHandler, navMenuActive } = props;
-  const [numberOfItemsInCart, setNumberOfItemsInCart] = useState(0);
-  const { cartHandler } = useContext(CartContext);
+  const { cartHandler, totalItemsInCart } = useContext(CartContext);
 
   let itemsNotification = null;
 
-  if (numberOfItemsInCart > 0) {
-    itemsNotification = <div>{numberOfItemsInCart}</div>;
+  if (totalItemsInCart > 0) {
+    itemsNotification = <div>{totalItemsInCart}</div>;
   }
 
   return (

@@ -6,6 +6,7 @@
   flex-direction: column;
   background: white;
   gap: 10px;
+  text-align: left;
 }
 
 .image_container {
